@@ -1,0 +1,30 @@
+Package: biodogma
+Type: Package
+Title: Central Dogma of Biology
+Version: 0.1.0
+Authors@R:
+  c(person(given = "Jorge",
+           family = "Santiago",
+           role = c("aut", "cre"), 
+           email = "s243310@dtu.dk"), 
+    person(given = "Eric",
+           family = "Torres",
+           role = "aut",
+           email = "s243275@dtu.dk"),
+    person(given = "Elena",
+           family = "Iriondo",
+           role = "aut",
+           email = "s243312@dtu.dk"),
+    person(given = "Konstantina",
+           family = "Gkopi",
+           role = "aut",
+           email = "s243692@dtu.dk")
+    person(given = "Lucía",
+           family = "De Lamadrid",
+           role = "aut",
+           email = "s243311@dtu.dk"))
+Maintainer: Lucía de Lamadrid <s243311@dtu.dk>
+Description: Given a nucleotide sequence this package can mimic the processes described in the central dogma of biology, inlcuding retrotranscription. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
