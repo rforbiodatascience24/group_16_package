@@ -30,6 +30,37 @@ library(biodogma)
 
 -   **Function 5:** `aa_count`
 
+Amino acid sequences contain valuable information about protein structure. The `aa_count` function helps visualize the composition of these sequences, being useful to analyze certain protein characteristicas like the enrichment in certain amino acid.
+
+#### Installation
+
+Make sure to have the `stringr` and `ggplot2` packages installed.
+
+#### Usage
+
+`aa_count(seq)`
+
+
+##### Arguments
+
+-   `seq`: a character **string** containing the amino acid sequence.
+
+##### Return
+
+-   A `ggplot` bar plot showing the absolute frequencies for each amino acid present in the given sequence.
+
+#### Example
+
+```{r}
+library("biodogma")
+
+# Provide an amino acid sequence
+seq1 <- "AKLPYNILSDFHVNSTRLGE"
+
+# Call the function 
+aa_plot <- aa_count(seq1)
+```
+
 ### Discussion
 
 -   Use cases for the package and what other functions could be included.
