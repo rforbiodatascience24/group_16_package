@@ -27,7 +27,7 @@ aa_count <- function(seq){
   counts[["aa"]] <- rownames(counts)
 
   count_plot <- counts |>
-    ggplot2::ggplot(ggplot2::aes(x = seq, y = Counts, fill = aa)) +
+    ggplot2::ggplot(ggplot2::aes(x = unique_aa, y = Counts, fill = aa)) +
     ggplot2::geom_col() +
     ggplot2::theme_bw() +
     ggplot2::theme(legend.position = "none")

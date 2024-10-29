@@ -17,3 +17,21 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(biodogma)
 ```
+
+### Description of the package `biodogma`:
+
+-   **Function 1:** `gen_dna_seq`
+
+-   **Function 2:** `dna_to_rna`
+
+-   **Function 3:** `split_codon`
+
+-   **Function 4:** `gen_aa_seq`
+
+-   **Function 5:** `aa_count`
+
+### Discussion
+
+-   Use cases for the package and what other functions could be included.
+
+-   Task 3 - Group discussion
