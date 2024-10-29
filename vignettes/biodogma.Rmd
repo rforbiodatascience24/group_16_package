@@ -26,11 +26,50 @@ library(biodogma)
 
 -   **Function 3:** `split_codon`
 
+mRNA sequences are read in codons or groups of three ribonucleotides, each of these coding for a specific amino acid. The purpose of `split_codon` is to split a string of an RNA sequence into a vector of codons.
+
+#### Usage
+
+`split_codon(rna_seq, starting_codon_position)`
+
+##### Arguments
+
+-   `rna_seq`: a character string containing the RNA sequence.
+
+-   `starting_codon_position`: an int variable providing the position of the initial codon in the given sequence. It's *not necessary* to provide this argument, the default value being position 1.
+
+##### Return
+
+-   A vector containing the codons found in the given string.
+
+#### Example
+
+```{r}
+library("biodogma")
+
+# Provide an RNA sequence
+rna_seq <- "AUGACUAAGA"
+pos <- 2
+
+# Call the function without specifying the starting position
+split_codon(rna_seq)
+
+# Call the function specifying the starting position
+split_codon(rna_seq, pos)
+```
+
+#### Step-by-step explanation
+
+The function `split_codon` follows these steps:
+
+1.  Obtains the length of `rna_seq` using `nchar()` and saves it in a variable (`len`).
+2.  Splits `rna_seq` into codons or non-overlapping 3-character strings, using the function `susbtring()`. In the function `susbtring()` the arguments given are the `rna_seq` string and sequences of the initial and ending positions of each codon. These sequences are defined using `seq()`, which calls both `len` and `starting_codon_position`.
+
 -   **Function 4:** `gen_aa_seq`
 
 -   **Function 5:** `aa_count`
 
-Amino acid sequences contain valuable information about protein structure. The `aa_count` function helps visualize the composition of these sequences, being useful to analyze certain protein characteristicas like the enrichment in certain amino acid.
+Amino acid sequences contain valuable information about protein structure. The `aa_count` function helps visualize the composition of these sequences, being useful to analyze certain protein characteristics like the enrichment in certain amino acid.
 
 #### Installation
 
