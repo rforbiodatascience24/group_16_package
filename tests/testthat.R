@@ -10,3 +10,4 @@ library(testthat)
 library(biodogma)
 
 test_check("biodogma")
+
