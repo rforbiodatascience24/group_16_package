@@ -1,6 +1,6 @@
 ---
 title: "biodogma"
-output: rmarkdown::pdf_document
+output: rmarkdown::html_document
 vignette: >
   %\VignetteIndexEntry{biodogma}
   %\VignetteEngine{knitr::rmarkdown}
@@ -38,8 +38,7 @@ Make sure to have the `stringr` and `ggplot2` packages installed.
 
 #### Usage
 
-`aa_count(seq)`
-
+aa_count(seq)
 
 ##### Arguments
 
@@ -60,6 +59,17 @@ seq1 <- "AKLPYNILSDFHVNSTRLGE"
 # Call the function 
 aa_plot <- aa_count(seq1)
 ```
+
+This example produces a barplot saved in the `aa_plot` object.
+
+#### Step-by-step explanation
+
+The function follows these steps:
+
+1.  Obtain a vector with unique amino acids in the sequence.
+2.  Counts amino acids using `str_count` from the `stringr` package.
+3.  Creates data frame with the frequencies of each amino acid.
+4.  Plot: using `ggplot2` a bar plot is generated showing the absolute frequencies.
 
 ### Discussion
 
