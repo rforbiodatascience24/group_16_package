@@ -34,11 +34,16 @@ Amino acid sequences contain valuable information about protein structure. The `
 
 #### Installation
 
-Make sure to have the `stringr` and `ggplot2` packages installed.
+Make sure to have the `stringr` and `ggplot2` packages installed. If not, you can install them using:
+
+```{r}
+install.packages("stringr")
+install.packages("ggplot2")
+```
 
 #### Usage
 
-aa_count(seq)
+`aa_count(seq)`
 
 ##### Arguments
 
@@ -76,3 +81,9 @@ The function follows these steps:
 -   Use cases for the package and what other functions could be included.
 
 -   Task 3 - Group discussion
+
+**Dependency:**
+
+Although it is usually better to avoid dependencies, in this package we have used functions from `stringr` and `ggplot2` packages, due to their improved functionality and great usage. The avoidance of dependencies simplifies the complexity of the maintenance of packages as new changes in other packages may affect the functionality of another. Furthermore, it increases the usage as it does not need additional packages besides the one you are installing. However, this is not always possible as packages like those integrating the tidyverse implement complex function in an efficient manner.
+
+In this package we have used `@importFrom package function` tags in the function description because it reduces the repetition of the `package::function` form, however the latter does not add it to the namespace and reduces the dependencies as it only loads the used functions and not the whole package (although this can also be achieved by using `min_version = TRUE` in the other form).
