@@ -28,6 +28,39 @@ The functions included in the `biodogma` package are:
 
 -   **Function 2:** `dna_to_rna`
 
+In the process of transcription, DNA is converted to RNA by replacing each occurrence of thymine (T) with uracil (U), which is specific to RNA. The purpose of `dna_to_rna` is to substitute "T" with "U" in a DNA sequence.
+
+#### Usage
+
+`dna_to_rna(dna_sequence)`
+
+##### Arguments
+
+-   `dna_sequence`: a character string containing the DNA sequence that needs to be transcribed. For example, a valid input might be "ATGCTTAC", where each letter represents a nucleotide base (adenine, thymine, guanine, cytosine).
+
+##### Return
+
+-   A character string representing the RNA sequence, with all occurrences of "T" replaced by "U". For example, the input "ATGCTTAC" would return "AUGCUUAC".
+
+#### Example
+
+```{r}
+library("biodogma")  
+
+# Define a DNA sequence
+dna_sequence <- "ATGCTTAC"
+
+# Transcribe DNA to RNA
+rna_sequence <- dna_to_rna(dna_sequence)
+
+# Print the RNA sequence
+print(rna_sequence)
+```
+
+#### Step-by-step explanation
+
+The `dna_to_rna` function uses the `gsub()` function to perform a global substitution on the input DNA sequence. Specifically, "T" characters are replaced with "U", simulating the transcription process where thymine in DNA is substituted with uracil in RNA.
+
 -   **Function 3:** `split_codon`
 
 mRNA sequences are read in codons or groups of three ribonucleotides, each of these coding for a specific amino acid. The purpose of `split_codon` is to split a string of an RNA sequence into a vector of codons.
@@ -121,11 +154,9 @@ The function follows these steps:
 
 ### Discussion
 
--   Use cases for the package and what other functions could be included.
+##### Use cases for the package and what other functions could be included
 
--   Task 3 - Group discussion
-
-**Dependency:**
+##### Task 3 - Group discussion
 
 Although it is usually better to avoid dependencies, in this package we have used functions from `stringr` and `ggplot2` packages, due to their improved functionality and great usage. The avoidance of dependencies simplifies the complexity of the maintenance of packages as new changes in other packages may affect the functionality of another. Furthermore, it increases the usage as it does not need additional packages besides the one you are installing. However, this is not always possible as packages like those integrating the tidyverse implement complex function in an efficient manner.
 
