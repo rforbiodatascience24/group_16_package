@@ -18,15 +18,53 @@ knitr::opts_chunk$set(
 library(biodogma)
 ```
 
-### Description of the package `biodogma`:
+## Description of the package `biodogma`:
 
 The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory states that genetic information flows from **DNA** to **RNA** via the process of [transcription]{.underline}, and from RNA to **protein** via [translation]{.underline}. To replicate this, the package allows us to generate random DNA sequences, transform them into RNA sequences, split the RNA sequences into codons, translate the codons into amino acids, and finally visualise the amino acid content in a protein sequence.
 
 The functions included in the `biodogma` package are:
 
--   **Function 1:** `gen_dna_seq`
+### **Function 1:** `gen_dna_seq`
 
--   **Function 2:** `dna_to_rna`
+The `gen_dna_seq` function generates a random DNA sequence of a specified length. Each nucleotide in the sequence is chosen randomly from the set {A, T, G, C} to simulate a DNA sequence.
+
+#### **Usage**
+
+`gen_dna_seq(length)`
+
+##### **Arguments**
+
+-   `length`: An integer specifying the desired length of the DNA sequence. This value determines the number of nucleotides in the generated sequence.
+
+##### **Return**
+
+-   A character string representing a randomly generated DNA sequence of the specified length, consisting of the nucleotides "A" (adenine), "T" (thymine), "G" (guanine), and "C" (cytosine).
+
+#### Example
+
+```{r}
+
+# Load the biodogma package
+library(biodogma)
+
+# Define the desired length for the DNA sequence
+length <- 10
+
+# Generate a random DNA sequence of the specified length
+dna_seq <- gen_dna_seq(length)
+
+# Print the generated DNA sequence
+print(dna_seq)
+
+```
+
+#### Step-by-Step Explanation
+
+-   The function uses the `sample()` function to randomly select characters from the set `c("A", "T", "G", "C")`. The `size` argument, set to `length`, specifies the number of nucleotides to generate, and `replace = TRUE` allows repeated selection of any nucleotide.
+
+-   The randomly selected nucleotides are combined into a single string using `paste0()` with `collapse = ""`, creating a contiguous DNA sequence without spaces between characters.
+
+### **Function 2:** `dna_to_rna`
 
 In the process of transcription, DNA is converted to RNA by replacing each occurrence of thymine (T) with uracil (U), which is specific to RNA. The purpose of `dna_to_rna` is to substitute "T" with "U" in a DNA sequence.
 
@@ -61,7 +99,7 @@ print(rna_sequence)
 
 The `dna_to_rna` function uses the `gsub()` function to perform a global substitution on the input DNA sequence. Specifically, "T" characters are replaced with "U", simulating the transcription process where thymine in DNA is substituted with uracil in RNA.
 
--   **Function 3:** `split_codon`
+### **Function 3:** `split_codon`
 
 mRNA sequences are read in codons or groups of three ribonucleotides, each of these coding for a specific amino acid. The purpose of `split_codon` is to split a string of an RNA sequence into a vector of codons.
 
@@ -104,7 +142,7 @@ The function `split_codon` follows these steps:
 
 -   **Function 4:** `gen_aa_seq`
 
--   **Function 5:** `aa_count`
+### **Function 5:** `aa_count`
 
 Amino acid sequences contain valuable information about protein structure. The `aa_count` function helps visualize the composition of these sequences, being useful to analyze certain protein characteristics like the enrichment in certain amino acid.
 
@@ -154,9 +192,25 @@ The function follows these steps:
 
 ### Discussion
 
-##### Use cases for the package and what other functions could be included
+#### Use Cases for `biodogma`
 
-##### Task 3 - Group discussion
+The `biodogma` package is useful in:
+
+-   **Education**: This package helps students and educators simulate the processes of transcription and translation, visualizing how DNA is converted to RNA and then to proteins.
+
+-   **Bioinformatics Research**: Researchers can use the package for quick simulations, such as generating synthetic DNA/RNA sequences, analyzing codon usage, and visualizing amino acid compositions in protein sequences, which can help in understanding protein structure, function, and enrichment of specific amino acids.
+
+#### Potential Additional Functions
+
+To enhance the package’s capabilities, the following functions could be added:
+
+-   **Reverse Transcription**: A function to convert RNA back into DNA.
+
+-   **Codon Optimization**: A function that suggests codon sequences based on species-specific codon usage bias.
+
+-   **Protein Properties**: Functions to calculate protein properties such as molecular weight, hydrophobicity, or charge, which could assist in protein characterization and function prediction.
+
+#### Dependencies
 
 Although it is usually better to avoid dependencies, in this package we have used functions from `stringr` and `ggplot2` packages, due to their improved functionality and great usage. The avoidance of dependencies simplifies the complexity of the maintenance of packages as new changes in other packages may affect the functionality of another. Furthermore, it increases the usage as it does not need additional packages besides the one you are installing. However, this is not always possible as packages like those integrating the tidyverse implement complex function in an efficient manner.
 
