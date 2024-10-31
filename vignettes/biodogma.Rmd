@@ -59,12 +59,6 @@ print(dna_seq)
 
 ```
 
-#### Step-by-Step Explanation
-
--   The function uses the `sample()` function to randomly select characters from the set `c("A", "T", "G", "C")`. The `size` argument, set to `length`, specifies the number of nucleotides to generate, and `replace = TRUE` allows repeated selection of any nucleotide.
-
--   The randomly selected nucleotides are combined into a single string using `paste0()` with `collapse = ""`, creating a contiguous DNA sequence without spaces between characters.
-
 ### **Function 2:** `dna_to_rna()`
 
 In the process of transcription, DNA is converted to RNA by replacing each occurrence of thymine (T) with uracil (U), which is specific to RNA. The purpose of `dna_to_rna` is to substitute "T" with "U" in a DNA sequence.
@@ -96,10 +90,6 @@ rna_sequence <- dna_to_rna(dna_sequence)
 # Print the RNA sequence
 print(rna_sequence)
 ```
-
-#### Step-by-step explanation
-
-The `dna_to_rna` function uses the `gsub()` function to perform a global substitution on the input DNA sequence. Specifically, "T" characters are replaced with "U", simulating the transcription process where thymine in DNA is substituted with uracil in RNA.
 
 ### **Function 3:** `split_codon()`
 
@@ -136,14 +126,6 @@ split_codon(rna_seq)
 split_codon(rna_seq, pos)
 ```
 
-#### Step-by-step explanation
-
-The function `split_codon` follows these steps:
-
-1.  Obtains the length of `rna_seq` using `nchar()` and saves it in a variable (`len`).
-
-Splits `rna_seq` into codons or non-overlapping 3-character strings, using the function `susbtring()`. In the function `susbtring()` the arguments given are the `rna_seq` string and sequences of the initial and ending positions of each codon. These sequences are defined using `seq()`, which calls both `len` and `starting_codon_position`.
-
 ### Function 4: `gen_aa_seq()`
 
 After the mRNA has been synthesized, the molecule leaves the nucleus and is read by ribosomes for generating the resulting protein. In this process, called biological translation, each triplet of ribonucleotides ('codons') result in one specific amino acid, that will generate the amino acid chain. This equivalence happens accordingly to the genetic code.
@@ -174,10 +156,6 @@ codons <-  c("AUG", "ACU", "AAG")
 aa_seq <- gen_aa_seq(codons)
 print(aa_seq)
 ```
-
-#### Step-by-step explanation
-
-`gen_aa_seq()` receives a vector with the codons or nucleotide triplets from a given mRNA sequence. Each of them is converted into an amino acid using `genetic_code`. These characters will be concatenated with the `paste0()` function, without any separation.
 
 ### **Function 5:** `aa_count()`
 
@@ -219,15 +197,6 @@ aa_plot
 
 This example produces a barplot saved in the `aa_plot` object.
 
-#### Step-by-step explanation
-
-The function follows these steps:
-
-1.  Obtain a vector with unique amino acids in the sequence.
-2.  Counts amino acids using `str_count` from the `stringr` package.
-3.  Creates data frame with the frequencies of each amino acid.
-4.  Plot: using `ggplot2` a bar plot is generated showing the absolute frequencies.
-
 ### Discussion
 
 #### Use Cases for `biodogma`
@@ -252,4 +221,4 @@ To enhance the package’s capabilities, the following functions could be added:
 
 Although it is usually better to avoid dependencies, in this package we have used functions from `stringr` and `ggplot2` packages, due to their improved functionality and great usage. The avoidance of dependencies simplifies the complexity of the maintenance of packages as new changes in other packages may affect the functionality of another. Furthermore, it increases the usage as it does not need additional packages besides the one you are installing. However, this is not always possible as packages like those integrating the tidyverse implement complex function in an efficient manner.
 
-In this package we have used `@importFrom package function` tags in the function description because it reduces the repetition of the `package::function` form, however the latter does not add it to the namespace and reduces the dependencies as it only loads the used functions and not the whole package (although this can also be achieved by using `min_version = TRUE` in the other form).
+We have used `@importFrom package function` tags in the function description because it reduces the repetition of the `package::function` form, however the latter does not add it to the namespace and reduces the dependencies as it only loads the used functions (although this can also be achieved by using `min_version = TRUE` in the other form).
