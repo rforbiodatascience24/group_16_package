@@ -22,8 +22,6 @@ library(biodogma)
 
 The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory was proposed by Francis Crick in 1957 and states that genetic information flows from **DNA** to **RNA** via the process of [transcription]{.underline}, and from RNA to **protein** via [translation]{.underline}. To replicate this, the package allows us to generate random DNA sequences, transform them into RNA sequences, split the RNA sequences into codons, translate the codons into amino acids, and finally visualise the amino acid whencontent in a protein sequence.
 
-![Central Dogma](images/vignette_central_dogma.png)
-
 The functions included in the `biodogma` package are:
 
 ### **Function 1:** `gen_dna_seq()`
@@ -192,7 +190,6 @@ seq1 <- "AKLPYNILSDFHVNSTRLGE"
 
 # Call the function 
 aa_plot <- aa_count(seq1)
-aa_plot
 ```
 
 This example produces a barplot saved in the `aa_plot` object.
@@ -221,4 +218,4 @@ To enhance the package’s capabilities, the following functions could be added:
 
 Although it is usually better to avoid dependencies, in this package we have used functions from `stringr` and `ggplot2` packages, due to their improved functionality and great usage. The avoidance of dependencies simplifies the complexity of the maintenance of packages as new changes in other packages may affect the functionality of another. Furthermore, it increases the usage as it does not need additional packages besides the one you are installing. However, this is not always possible as packages like those integrating the tidyverse implement complex function in an efficient manner.
 
-We have used `@importFrom package function` tags in the function description because it reduces the repetition of the `package::function` form, however the latter does not add it to the namespace and reduces the dependencies as it only loads the used functions (although this can also be achieved by using `min_version = TRUE` in the other form).
+We have used `@importFrom package function` tags in the function description because it reduces the repetition of the `package::function` form, however the latter does not add it to the namespace and reduces the dependencies as it only loads the used functions (although this can also be achieved by using `min_version = TRUE`).
