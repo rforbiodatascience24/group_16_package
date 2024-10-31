@@ -60,12 +60,6 @@ print(dna_seq)
 
 ```
 
-#### Step-by-Step Explanation
-
--   The function uses the `sample()` function to randomly select characters from the set `c("A", "T", "G", "C")`. The `size` argument, set to `length`, specifies the number of nucleotides to generate, and `replace = TRUE` allows repeated selection of any nucleotide.
-
--   The randomly selected nucleotides are combined into a single string using `paste0()` with `collapse = ""`, creating a contiguous DNA sequence without spaces between characters.
-
 ### **Function 2:** `dna_to_rna()`
 
 In the process of transcription, DNA is converted to RNA by replacing each occurrence of thymine (T) with uracil (U), which is specific to RNA. The purpose of `dna_to_rna` is to substitute "T" with "U" in a DNA sequence.
