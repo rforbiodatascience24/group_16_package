@@ -1,21 +1,10 @@
----
-output: github_document
----
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
-
-```{r setup}
+``` r
 library(biodogma)
 ```
 
 ## Description of the package `biodogma`:
 
-The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory was proposed by Francis Crick in 1957 and states that genetic information flows from **DNA** to **RNA** via the process of [transcription]{.underline}, and from RNA to **protein** via [translation]{.underline}. To replicate this, we have created several functions to replicate these processes. The functions included in the `biodogma` package are:
+The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory was proposed by Francis Crick in 1957 and states that genetic information flows from **DNA** to **RNA** via the process of <u>transcription</u>, and from RNA to **protein** via <u>translation</u>. To replicate this, we have created several functions to replicate these processes. The functions included in the `biodogma` package are:
 
 ### **Function 1:** `gen_dna_seq()`
 
@@ -35,13 +24,14 @@ The `gen_dna_seq` function generates a random DNA sequence of a specified length
 
 #### Example
 
-```{r}
+``` r
 # Define the desired length for the DNA sequence
 length <- 10
 # Generate a random DNA sequence of the specified length
 dna_seq <- gen_dna_seq(length)
 # Print the generated DNA sequence
 print(dna_seq)
+#> [1] "TTATTCATTC"
 ```
 
 ### **Function 2:** `dna_to_rna()`
@@ -58,15 +48,16 @@ In the process of transcription, DNA is converted to RNA by replacing each occur
 
 ##### Return
 
--   A character string representing the RNA sequence, with all occurrences of "T" replaced by "U".
+-   A character string representing the RNA sequence, with all occurrences of “T” replaced by “U”.
 
-```{r}
+``` r
 # Define a DNA sequence
 dna_sequence <- "ATGCTTAC"
 # Transcribe DNA to RNA
 rna_sequence <- dna_to_rna(dna_sequence)
 # Print the RNA sequence
 print(rna_sequence)
+#> [1] "AUGCUUAC"
 ```
 
 ### **Function 3:** `split_codon()`
@@ -81,25 +72,27 @@ mRNA sequences are read in codons or groups of three ribonucleotides, each of th
 
 -   `rna_seq`: a character string containing the RNA sequence.
 
--   `starting_codon_position`: an int variable providing the position of the initial codon in the given sequence. It's *not necessary* to provide this argument, the default value being position 1.
+-   `starting_codon_position`: an int variable providing the position of the initial codon in the given sequence. It’s *not necessary* to provide this argument, the default value being position 1.
 
 ##### Return
 
 -   A vector containing the codons found in the given string.
 
-```{r}
+``` r
 # Provide an RNA sequence
 rna_seq <- "AUGACUAAGA"
 pos <- 2
 # Call the function without specifying the starting position
 split_codon(rna_seq)
+#> [1] "AUG" "ACU" "AAG"
 # Call the function specifying the starting position
 split_codon(rna_seq, pos)
+#> [1] "UGA" "CUA" "AGA"
 ```
 
 ### Function 4: `gen_aa_seq()`
 
-After the mRNA has been synthesized, the molecule leaves the nucleus and is read by ribosomes for generating the resulting protein. In this process, called biological translation, each triplet of ribonucleotides ('codons') result in one specific amino acid, that will generate the amino acid chain. This equivalence happens accordingly to the genetic code.
+After the mRNA has been synthesized, the molecule leaves the nucleus and is read by ribosomes for generating the resulting protein. In this process, called biological translation, each triplet of ribonucleotides (‘codons’) result in one specific amino acid, that will generate the amino acid chain. This equivalence happens accordingly to the genetic code.
 
 **Usage**
 
@@ -113,13 +106,14 @@ After the mRNA has been synthesized, the molecule leaves the nucleus and is read
 
 After calling the function, the user will get a character string with the amino acid chain.
 
-```{r}
+``` r
 #Define a vector with the codons that will be translated into proteins. 
 #NOTE: the user may obtain this vector from the function splitcodon(). 
 codons <-  c("AUG", "ACU", "AAG") 
 #Call the function 
 aa_seq <- gen_aa_seq(codons)
 print(aa_seq)
+#> [1] "MTK"
 ```
 
 ### **Function 5:** `aa_count()`
@@ -146,7 +140,7 @@ Make sure to have the `stringr` and `ggplot2` packages installed. If not, you ca
 
 -   A `ggplot` bar plot showing the absolute frequencies for each amino acid present in the given sequence.
 
-```{r}
+``` r
 # Provide an amino acid sequence
 seq1 <- "AKLPYNILSDFHVNSTRLGE"
 # Call the function 
