@@ -20,7 +20,7 @@ library(biodogma)
 
 ## Description of the package `biodogma`:
 
-The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory was proposed by Francis Crick in 1957 and states that genetic information flows from **DNA** to **RNA** via the process of [transcription]{.underline}, and from RNA to **protein** via [translation]{.underline}. To replicate this, we have created several functions to replicate these processes. The functions included in the `biodogma` package are:
+The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory was proposed by Francis Crick in 1957 and states that genetic information flows from **DNA** to **RNA** via the process of [transcription]{.underline}, and from RNA to **protein** via [translation]{.underline}. To replicate this, we have created several functions included in the `biodogma` package:
 
 ### **Function 1:** `gen_dna_seq()`
 
@@ -37,8 +37,6 @@ The `gen_dna_seq` function generates a random DNA sequence of a specified length
 ##### Return
 
 -   A character string representing a randomly generated DNA sequence of the specified length.
-
-#### Example
 
 ```{r}
 # Define the desired length for the DNA sequence
@@ -104,7 +102,7 @@ split_codon(rna_seq, pos)
 
 ### Function 4: `gen_aa_seq()`
 
-After the mRNA has been synthesized, the molecule leaves the nucleus and is read by ribosomes for generating the resulting protein. In this process, called biological translation, each triplet of ribonucleotides ('codons') result in one specific amino acid, that will generate the amino acid chain. This equivalence happens accordingly to the genetic code.
+In the biological translation, each triplet of ribonucleotides ('codons') result in one specific amino acid, that will generate the amino acid chain. This equivalence happens accordingly to the genetic code.
 
 **Usage**
 
@@ -112,11 +110,11 @@ After the mRNA has been synthesized, the molecule leaves the nucleus and is read
 
 ##### **Arguments**
 
-`codon`: a vector containing the triplets of the considered mRNA chain.
+-   `codon`: a vector containing the triplets of the considered mRNA chain.
 
 ##### **Return**
 
-After calling the function, the user will get a character string with the amino acid chain.
+-   A character string with the amino acid chain.
 
 ```{r}
 #Define a vector with the codons that will be translated into proteins. 
