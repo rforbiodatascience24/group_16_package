@@ -36,9 +36,8 @@ The `gen_dna_seq` function generates a random DNA sequence of a specified length
 
 -   `length`: An integer specifying the desired length of the DNA sequence.
 
-```{=html}
-<!-- -->
-```
+##### Return
+
 -   A character string representing a randomly generated DNA sequence of the specified length.
 
 #### Example
@@ -171,23 +170,19 @@ aa_plot <- aa_count(seq1)
 
 ### Discussion
 
-#### Use Cases for `biodogma`
+#### **Use Cases for biodogma**
 
-The `biodogma` package is useful in:
+-   **Education**: Facilitates the simulation and visualization of transcription and translation processes for students and educators.
 
--   **Education**: This package helps students and educators simulate the processes of transcription and translation, visualizing how DNA is converted to RNA and then to proteins.
+-   **Bioinformatics Research**: Enables quick simulations for generating synthetic DNA/RNA, analyzing codon usage, and visualizing amino acid compositions, aiding in studies of protein structure, function, and specific amino acid enrichment.
 
--   **Bioinformatics Research**: Researchers can use the package for quick simulations, such as generating synthetic DNA/RNA sequences, analyzing codon usage, and visualizing amino acid compositions in protein sequences, which can help in understanding protein structure, function, and enrichment of specific amino acids.
+**Potential Additional Functions**
 
-#### Potential Additional Functions
+-   **Reverse Transcription**: Converts RNA back into DNA.
 
-To enhance the package’s capabilities, the following functions could be added:
+-   **Codon Optimization**: Recommends codon sequences based on species-specific codon usage.
 
--   **Reverse Transcription**: A function to convert RNA back into DNA.
-
--   **Codon Optimization**: A function that suggests codon sequences based on species-specific codon usage bias.
-
--   **Protein Properties**: Functions to calculate protein properties such as molecular weight, hydrophobicity, or charge, which could assist in protein characterization and function prediction.
+-   **Protein Properties**: Calculates properties like molecular weight, hydrophobicity, and charge to support protein characterization and function prediction.
 
 #### Dependencies
 
