@@ -1,6 +1,6 @@
 ---
 title: "biodogma"
-output: rmarkdown::html_document
+output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{biodogma}
   %\VignetteEngine{knitr::rmarkdown}
@@ -20,11 +20,13 @@ library(biodogma)
 
 ## Description of the package `biodogma`:
 
-The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory states that genetic information flows from **DNA** to **RNA** via the process of [transcription]{.underline}, and from RNA to **protein** via [translation]{.underline}. To replicate this, the package allows us to generate random DNA sequences, transform them into RNA sequences, split the RNA sequences into codons, translate the codons into amino acids, and finally visualise the amino acid content in a protein sequence.
+The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory was proposed by Francis Crick in 1957 and states that genetic information flows from **DNA** to **RNA** via the process of [transcription]{.underline}, and from RNA to **protein** via [translation]{.underline}. To replicate this, the package allows us to generate random DNA sequences, transform them into RNA sequences, split the RNA sequences into codons, translate the codons into amino acids, and finally visualise the amino acid content in a protein sequence.
+
+![Central dogma of molecular biology](images/vignette_central_dogma.png)
 
 The functions included in the `biodogma` package are:
 
-### **Function 1:** `gen_dna_seq`
+### **Function 1:** `gen_dna_seq()`
 
 The `gen_dna_seq` function generates a random DNA sequence of a specified length. Each nucleotide in the sequence is chosen randomly from the set {A, T, G, C} to simulate a DNA sequence.
 
@@ -64,7 +66,7 @@ print(dna_seq)
 
 -   The randomly selected nucleotides are combined into a single string using `paste0()` with `collapse = ""`, creating a contiguous DNA sequence without spaces between characters.
 
-### **Function 2:** `dna_to_rna`
+### **Function 2:** `dna_to_rna()`
 
 In the process of transcription, DNA is converted to RNA by replacing each occurrence of thymine (T) with uracil (U), which is specific to RNA. The purpose of `dna_to_rna` is to substitute "T" with "U" in a DNA sequence.
 
@@ -99,7 +101,7 @@ print(rna_sequence)
 
 The `dna_to_rna` function uses the `gsub()` function to perform a global substitution on the input DNA sequence. Specifically, "T" characters are replaced with "U", simulating the transcription process where thymine in DNA is substituted with uracil in RNA.
 
-### **Function 3:** `split_codon`
+### **Function 3:** `split_codon()`
 
 mRNA sequences are read in codons or groups of three ribonucleotides, each of these coding for a specific amino acid. The purpose of `split_codon` is to split a string of an RNA sequence into a vector of codons.
 
@@ -141,18 +143,52 @@ The function `split_codon` follows these steps:
 
 Splits `rna_seq` into codons or non-overlapping 3-character strings, using the function `susbtring()`. In the function `susbtring()` the arguments given are the `rna_seq` string and sequences of the initial and ending positions of each codon. These sequences are defined using `seq()`, which calls both `len` and `starting_codon_position`.
 
-### **Function 5:** `aa_count`
+### Function 4: `gen_aa_seq()`
 
-Amino acid sequences contain valuable information about protein structure. The `aa_count` function helps visualize the composition of these sequences, being useful to analyze certain protein characteristics like the enrichment in certain amino acid.
+After the mRNA has been synthesized, the molecule leaves the nucleus and is read by ribosomes for generating the resulting protein. In this process, called biological translation, each triplet of ribonucleotides ('codons') result in one specific amino acid, that will generate the amino acid chain. This equivalence happens accordingly to the genetic code.
+
+**Usage**
+
+`gen_aa_seq <- function(codons)`
+
+##### **Arguments**
+
+codon: a vector containing the triplets of the considered mRNA chain.
+
+##### **Return**
+
+After calling the function, the user will get an amino acid chain or polypeptide.
+
+**Example**
+
+```{r}
+#Load the library
+library("biodogma")
+
+#Define a vector with the codons that will be translated into proteins. 
+#NOTE: the user may obtain this vector from the function splitcodon(). 
+codons <-  c("AUG", "ACU", "AAG") 
+
+#Call the function 
+aa_seq <- gen_aa_seq(codons)
+print(aa_seq)
+```
+
+#### Step-by-step explanation
+
+`gen_aa_seq()` receives a vector with the codons or nucleotide triplets from a given mRNA sequence. Each of them is converted into an amino acid using `genetic_code`. These characters will be concatenated with the `paste0()` function, without any separation.
+
+### **Function 5:** `aa_count()`
+
+Amino acid sequences contain valuable information about protein structure. The `aa_count` function helps visualize the composition of these sequences, being useful to analyze certain protein characteristics like the enrichment in certain amino acid. Thus, the output of the function is a character variable including the amino acid chain.
 
 #### Installation
 
 Make sure to have the `stringr` and `ggplot2` packages installed. If not, you can install them using:
 
-```{r}
-install.packages("stringr")
-install.packages("ggplot2")
-```
+`install.packages("stringr")`
+
+`install.packages("ggplot2")`
 
 #### Usage
 

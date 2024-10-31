@@ -4,12 +4,12 @@
 \alias{split_codon}
 \title{Split DNA sequence into codons}
 \usage{
-split_codon(dna_seq, start = 1)
+split_codon(rna_seq, start = 1)
 }
 \arguments{
-\item{dna_seq}{String of the input DNA sequence}
-
 \item{start}{Starting codon position}
+
+\item{dna_seq}{String of the input RNA sequence}
 }
 \value{
 Vector of codons extracted from input string
@@ -18,9 +18,9 @@ Vector of codons extracted from input string
 Split DNA sequence into codons
 }
 \examples{
-split_codon("ATGCGTGAC")
+split_codon("AUGCGUGAC")
 
-dna <-("TATGCGCCAAA")
+rna <-("UAUGCGCCAAA")
 pos=2
-split_codon(dna, pos)
+split_codon(rna, pos)
 }
