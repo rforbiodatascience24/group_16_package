@@ -69,8 +69,6 @@ In the process of transcription, DNA is converted to RNA by replacing each occur
 
 -   A character string representing the RNA sequence, with all occurrences of "T" replaced by "U". For example, the input "ATGCTTAC" would return "AUGCUUAC".
 
-#### Example
-
 ```{r}
 # Load the biodogma package
 #library("biodogma")  
@@ -100,8 +98,6 @@ mRNA sequences are read in codons or groups of three ribonucleotides, each of th
 
 -   A vector containing the codons found in the given string.
 
-#### Example
-
 ```{r}
 # Load the biodogma package
 #library("biodogma")
@@ -129,8 +125,6 @@ codon: a vector containing the triplets of the considered mRNA chain.
 ##### **Return**
 
 After calling the function, the user will get an amino acid chain or polypeptide.
-
-**Example**
 
 ```{r}
 #Load the library
@@ -167,16 +161,12 @@ Make sure to have the `stringr` and `ggplot2` packages installed. If not, you ca
 
 -   A `ggplot` bar plot showing the absolute frequencies for each amino acid present in the given sequence.
 
-#### Example
-
 ```{r}
 # Provide an amino acid sequence
 seq1 <- "AKLPYNILSDFHVNSTRLGE"
 # Call the function 
 aa_plot <- aa_count(seq1)
 ```
-
-This example produces a barplot saved in the `aa_plot` object.
 
 ### Discussion
 
