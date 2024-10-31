@@ -157,7 +157,7 @@ codon: a vector containing the triplets of the considered mRNA chain.
 
 ##### **Return**
 
-After calling the function, the user will get an amino acid chain or polypeptide.
+After calling the function, the user will get a character string with the amino acid chain.
 
 **Example**
 
