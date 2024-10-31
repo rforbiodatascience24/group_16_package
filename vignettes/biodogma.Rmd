@@ -186,10 +186,9 @@ Amino acid sequences contain valuable information about protein structure. The `
 
 Make sure to have the `stringr` and `ggplot2` packages installed. If not, you can install them using:
 
-```{r}
-install.packages("stringr")
-install.packages("ggplot2")
-```
+`install.packages("stringr")`
+
+`install.packages("ggplot2")`
 
 #### Usage
 
