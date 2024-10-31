@@ -22,6 +22,8 @@ library(biodogma)
 
 The package `biodogma` consists of 5 simple functions that allows us to model the central dogma of molecular biology. This theory was proposed by Francis Crick in 1957 and states that genetic information flows from **DNA** to **RNA** via the process of [transcription]{.underline}, and from RNA to **protein** via [translation]{.underline}. To replicate this, the package allows us to generate random DNA sequences, transform them into RNA sequences, split the RNA sequences into codons, translate the codons into amino acids, and finally visualise the amino acid whencontent in a protein sequence.
 
+![Central Dogma](images/vignette_central_dogma.png)
+
 The functions included in the `biodogma` package are:
 
 ### **Function 1:** `gen_dna_seq()`
