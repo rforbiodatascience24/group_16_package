@@ -170,19 +170,9 @@ aa_plot <- aa_count(seq1)
 
 ### Discussion
 
-#### **Use Cases for biodogma**
+#### **Use Cases for biodogma and Potential Additional Functions**
 
--   **Education**: Facilitates the simulation and visualization of transcription and translation processes for students and educators.
-
--   **Bioinformatics Research**: Enables quick simulations for generating synthetic DNA/RNA, analyzing codon usage, and visualizing amino acid compositions, aiding in studies of protein structure, function, and specific amino acid enrichment.
-
-**Potential Additional Functions**
-
--   **Reverse Transcription**: Converts RNA back into DNA.
-
--   **Codon Optimization**: Recommends codon sequences based on species-specific codon usage.
-
--   **Protein Properties**: Calculates properties like molecular weight, hydrophobicity, and charge to support protein characterization and function prediction.
+The **biodogma** package is valuable in education for simulating and visualizing transcription and translation processes, enhancing learning for students and educators. In bioinformatics research, it aids in generating synthetic DNA/RNA, analyzing codon usage, and visualizing amino acid compositions to support protein structure and function studies. Potential enhancements include adding reverse transcription for RNA-to-DNA conversion, codon optimization based on usage bias, and functions to calculate protein properties like molecular weight, hydrophobicity, and charge for detailed protein analysis.
 
 #### Dependencies
 
