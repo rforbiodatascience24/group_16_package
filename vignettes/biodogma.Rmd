@@ -45,16 +45,12 @@ The `gen_dna_seq` function generates a random DNA sequence of a specified length
 ```{r}
 # Load the biodogma package
 #library(biodogma)
-
 # Define the desired length for the DNA sequence
 length <- 10
-
 # Generate a random DNA sequence of the specified length
 dna_seq <- gen_dna_seq(length)
-
 # Print the generated DNA sequence
 print(dna_seq)
-
 ```
 
 ### **Function 2:** `dna_to_rna()`
@@ -78,13 +74,10 @@ In the process of transcription, DNA is converted to RNA by replacing each occur
 ```{r}
 # Load the biodogma package
 #library("biodogma")  
-
 # Define a DNA sequence
 dna_sequence <- "ATGCTTAC"
-
 # Transcribe DNA to RNA
 rna_sequence <- dna_to_rna(dna_sequence)
-
 # Print the RNA sequence
 print(rna_sequence)
 ```
@@ -112,14 +105,11 @@ mRNA sequences are read in codons or groups of three ribonucleotides, each of th
 ```{r}
 # Load the biodogma package
 #library("biodogma")
-
 # Provide an RNA sequence
 rna_seq <- "AUGACUAAGA"
 pos <- 2
-
 # Call the function without specifying the starting position
 split_codon(rna_seq)
-
 # Call the function specifying the starting position
 split_codon(rna_seq, pos)
 ```
@@ -145,11 +135,9 @@ After calling the function, the user will get an amino acid chain or polypeptide
 ```{r}
 #Load the library
 #library("biodogma")
-
 #Define a vector with the codons that will be translated into proteins. 
 #NOTE: the user may obtain this vector from the function splitcodon(). 
 codons <-  c("AUG", "ACU", "AAG") 
-
 #Call the function 
 aa_seq <- gen_aa_seq(codons)
 print(aa_seq)
@@ -157,7 +145,7 @@ print(aa_seq)
 
 ### **Function 5:** `aa_count()`
 
-Amino acid sequences contain valuable information about protein structure. The `aa_count` function helps visualize the composition of these sequences, being useful to analyze certain protein characteristics like the enrichment in certain amino acid. Thus, the output of the function is a character variable including the amino acid chain.
+Amino acid sequences contain valuable information about protein structure. The `aa_count` function helps visualize the composition of these sequences.
 
 #### Installation
 
@@ -182,12 +170,8 @@ Make sure to have the `stringr` and `ggplot2` packages installed. If not, you ca
 #### Example
 
 ```{r}
-# Load the biodogma package
-#library("biodogma")
-
 # Provide an amino acid sequence
 seq1 <- "AKLPYNILSDFHVNSTRLGE"
-
 # Call the function 
 aa_plot <- aa_count(seq1)
 ```
