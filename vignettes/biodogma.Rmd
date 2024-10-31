@@ -190,7 +190,6 @@ seq1 <- "AKLPYNILSDFHVNSTRLGE"
 
 # Call the function 
 aa_plot <- aa_count(seq1)
-aa_plot
 ```
 
 This example produces a barplot saved in the `aa_plot` object.
