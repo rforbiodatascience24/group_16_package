@@ -45,9 +45,8 @@ The `gen_dna_seq` function generates a random DNA sequence of a specified length
 #### Example
 
 ```{r}
-
 # Load the biodogma package
-library(biodogma)
+#library(biodogma)
 
 # Define the desired length for the DNA sequence
 length <- 10
@@ -85,7 +84,8 @@ In the process of transcription, DNA is converted to RNA by replacing each occur
 #### Example
 
 ```{r}
-library("biodogma")  
+# Load the biodogma package
+#library("biodogma")  
 
 # Define a DNA sequence
 dna_sequence <- "ATGCTTAC"
@@ -122,7 +122,8 @@ mRNA sequences are read in codons or groups of three ribonucleotides, each of th
 #### Example
 
 ```{r}
-library("biodogma")
+# Load the biodogma package
+#library("biodogma")
 
 # Provide an RNA sequence
 rna_seq <- "AUGACUAAGA"
@@ -163,7 +164,7 @@ After calling the function, the user will get an amino acid chain or polypeptide
 
 ```{r}
 #Load the library
-library("biodogma")
+#library("biodogma")
 
 #Define a vector with the codons that will be translated into proteins. 
 #NOTE: the user may obtain this vector from the function splitcodon(). 
@@ -205,13 +206,15 @@ Make sure to have the `stringr` and `ggplot2` packages installed. If not, you ca
 #### Example
 
 ```{r}
-library("biodogma")
+# Load the biodogma package
+#library("biodogma")
 
 # Provide an amino acid sequence
 seq1 <- "AKLPYNILSDFHVNSTRLGE"
 
 # Call the function 
 aa_plot <- aa_count(seq1)
+aa_plot
 ```
 
 This example produces a barplot saved in the `aa_plot` object.
